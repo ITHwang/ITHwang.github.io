@@ -9,7 +9,7 @@ title: "선택 정렬(Selection sort) with C++"
 
 Loop마다 n개의 element의 모두 확인하면서 최솟값을 찾기 때문에, 아래 그림과 같이 왼쪽부터 하나씩 최종 위치가 확정된다.
 
-<img src="..\_images\20210225-selection-sort-animation.gif" title="https://upload.wikimedia.org/wikipedia/commons/b/b0/Selection_sort_animation.gif">
+![selection-sort-animation](../_images/20210225-selection-sort-animation.gif)
 
 - 시간 복잡도(Time Complexity)
 
