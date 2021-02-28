@@ -9,7 +9,7 @@ title: "선택 정렬(Selection sort) with C++"
 
 Loop마다 n개의 element의 모두 확인하면서 최솟값을 찾기 때문에, 아래 그림과 같이 왼쪽부터 하나씩 최종 위치가 확정된다.
 
-<img src="../_images/20210225-selection-sort-animation.gif" title="https://upload.wikimedia.org/wikipedia/commons/b/b0/Selection_sort_animation.gif">
+<img src="..\_images\20210225-selection-sort-animation.gif" title="https://upload.wikimedia.org/wikipedia/commons/b/b0/Selection_sort_animation.gif">
 
 - 시간 복잡도(Time Complexity)
 
@@ -25,13 +25,13 @@ Loop마다 n개의 element의 모두 확인하면서 최솟값을 찾기 때문�
 
     최솟값 2이 있는 네 번째 자리와 첫 번째 자리를 바꾼다.
 
-    [**2**, 4, 3, **6**]
+    <code>[<strong>2</strong>, 4, 3, <strong>6</strong>]</code>
 
 - Iter 2: **두 번째 자리**에 배치할 숫자 결정
 
     정렬된 첫 번째 자리의 숫자를 제외한 나머지 숫자 중 최솟값 3이 있는 세 번째 자리와 두 번째 자리를 바꾼다. 
 
-    [2, **3**, **4**, 6]
+    <code>[2, <strong>3</strong>, <strong>4</strong>, 6]</code>
 
 - Iter 3: **세 번째 자리**에 배치할 숫자 결정
 
@@ -57,7 +57,9 @@ for i=1 to n:
 
 ## Problem: 3등의 성적은?
 ---
-    N명의 수학 성적이 주어지면 그 중 3등인 수학 성적을 출력하시오. 만약 학생들의 점수가 100점이 3명, 99점이 2명, 98점이 5명, 97점이 3명일 경우, 98점이 3등인 점수다.
+    N명의 수학 성적이 주어지면 그 중 3등인 수학 성적을 출력하시오.
+    
+    만약 학생들의 점수가 100점이 3명, 99점이 2명, 98점이 5명, 97점이 3명일 경우, 98점이 3등인 점수다.
 
 - 입력
 
@@ -66,14 +68,17 @@ for i=1 to n:
     두 번째 줄에 N개의 수학 성적 점수가 공백을 사이에 두고 입력된다. 수학 성적 점수는 100점 만점 기준으로 입력된다.
 
     Ex)
-    <pre><code>7<br>80 96 75 82 96 92 100</code></pre>
+
+        7
+        80 96 75 82 96 92 100
 
 - 출력
 
     3등인 점수를 출력한다.
 
     Ex)
-    <pre><code>92</code></pre>
+
+        92
 
 ## Solution
 ---
@@ -131,6 +136,6 @@ int main()
 ```
 
 ## Reference
-- https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC
-- https://www.youtube.com/watch?v=jtxwQ7ChiII
+- [위키백과: 선택정렬](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)
+- [유튜브: 셀렉션소트 선택정렬 5분만에 이해하기 - Gunny](https://www.youtube.com/watch?v=jtxwQ7ChiII)
 - 인프런: it 취업을 위한 알고리즘 문제풀이(김태원) 33번 문제
