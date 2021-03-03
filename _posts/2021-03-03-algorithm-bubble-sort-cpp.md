@@ -52,6 +52,7 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
         ```mermaid
         graph LR
         A(13)---B(11)---C(7)---D(5)---E(15)---F(23)
+        a
         ```
 
 ## Pseudo-code
