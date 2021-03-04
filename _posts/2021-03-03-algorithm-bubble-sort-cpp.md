@@ -28,6 +28,7 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
 <body>
 <code>13 23 11 7 5 15</code>를 오름차순으로 정렬할 경우,
 <script src="https://github.com/ITHwang/ITHwang.github.io/blob/master/js/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 - 1st outer loop: 1~6번째 숫자들 중 최댓값을 6번째 자리에 배정
     - inner loop
@@ -193,5 +194,3 @@ int main()
 - [위키백과: 버블정렬](https://ko.wikipedia.org/wiki/%EA%B1%B0%ED%92%88_%EC%A0%95%EB%A0%AC)
 - [Youtube: 버블소트 거품정렬 5분만에 이해하기 - Gunny](https://www.youtube.com/watch?v=RCnyz-Bfkmc&t=192s)
 - 인프런: it 취업을 위한 알고리즘 문제풀이(김태원) 34번 문제
-
-<script src="https://github.com/ITHwang/ITHwang.github.io/blob/master/js/mermaid.min.js"></script>
