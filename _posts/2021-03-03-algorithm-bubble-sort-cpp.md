@@ -25,7 +25,9 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
 
 ## Simulation
 ---
-`13 23 11 7 5 15`를 오름차순으로 정렬할 경우,
+<body>
+<code>13 23 11 7 5 15</code>를 오름차순으로 정렬할 경우,
+<script src="https://github.com/ITHwang/ITHwang.github.io/blob/master/js/mermaid.min.js"></script>
 
 - 1st outer loop: 1~6번째 숫자들 중 최댓값을 6번째 자리에 배정
     - inner loop
@@ -117,6 +119,7 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
             graph LR
             A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
         </div>
+</body>
 
 ## Pseudo-code
 ---
