@@ -190,5 +190,3 @@ int main()
 - [위키백과: 버블정렬](https://ko.wikipedia.org/wiki/%EA%B1%B0%ED%92%88_%EC%A0%95%EB%A0%AC)
 - [Youtube: 버블소트 거품정렬 5분만에 이해하기 - Gunny](https://www.youtube.com/watch?v=RCnyz-Bfkmc&t=192s)
 - 인프런: it 취업을 위한 알고리즘 문제풀이(김태원) 34번 문제
-
-<script src="https://github.com/ITHwang/mermaid/blob/develop/dist/mermaid.min.js"></script>
