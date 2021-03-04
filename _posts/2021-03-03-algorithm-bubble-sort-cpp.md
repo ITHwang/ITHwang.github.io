@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "버블 정렬(Bubble sort) with C++"
+use_mermaid = true
 ---
 
 ## Description
