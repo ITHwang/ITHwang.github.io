@@ -52,26 +52,138 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
         ```mermaid
         graph LR
         A(13)---B(11)---C(7)---D(5)---E(15)---F(23)
-        a
+        ```
+- 2nd outer loop: 1~5번째 숫자들 중 최댓값을 5번째 자리에 배정
+    - inner loop
+        ```mermaid
+        graph LR
+        A(13)==swap===B(11)---C(7)---D(5)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(11)---B(13)==swap===C(7)---D(5)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(11)---B(7)---C(13)==swap===D(5)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(11)---B(7)---C(5)---D(13)==Don't swap===E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(11)---B(7)---C(5)---D(13)---E(15)---F(23)
+        ```
+- 3rd outer loop: 1~4번째 숫자들 중 최댓값을 4번째 자리에 배정
+    - inner loop
+        ```mermaid
+        graph LR
+        A(11)==swap===B(7)---C(5)---D(13)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(7)---B(11)==swap===C(5)---D(13)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(7)---B(5)---C(11)==Don't swap===D(13)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(7)---B(5)---C(11)---D(13)---E(15)---F(23)
+        ```
+- 4th outer loop: 1~3번째 숫자들 중 최댓값을 3번째 자리에 배정
+    - inner loop
+        ```mermaid
+        graph LR
+        A(7)==swap===B(5)---C(11)---D(13)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(5)---B(7)==Don't swap===C(11)---D(13)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
+        ```
+- 5th outer loop: 1~2번째 숫자들 중 최댓값을 2번째 자리에 배정
+    - inner loop
+        ```mermaid
+        graph LR
+        A(7)==swap===B(5)---C(11)---D(13)---E(15)---F(23)
+        ```
+        ```mermaid
+        graph LR
+        A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
         ```
 
 ## Pseudo-code
 ---
-```
+```cpp
 (오름차순 기준)
+for i=1 to n-1:
+    for j=1 to n-i:
+        if array[j]가 array[j+1]보다 크면,
+            swap(array[j], array[j+1]);
+
+    if 해당 outer loop에서 모든 원소가 위 조건절에 해당하지 않으면,
+        break;
 ```
 
 ## Code
 ---
 - 입력: 첫 번째 줄에 주어진 n만큼의 자연수들이 공백을 두고 입력된다.
+
     ex)
+
         6
         13 23 11 7 5 15
+
 - 출력: 오름차순으로 정렬된 수열을 출력한다.
+
     ex)
+
         5 7 11 13 15 23
 
 ```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+
+    //배열 받기
+	int n;
+	cin >> n;
+	vector<int> v(n + 1);
+	for (int i = 1; i <= n; i++) cin >> v[i];
+	
+	int cnt; //Outer loop마다 스왑되는 횟수
+	for (int i = 1; i <= n - 1; i++)
+	{
+		cnt = 0;
+		for (int j = 1; j <= n - i; j++)
+		{
+			if (v[j] > v[j + 1]) //현재 숫자가 바로 뒤에 있는 숫자보다 크면,
+			{
+                //swap
+				int tmp = v[j];
+				v[j] = v[j + 1];
+				v[j + 1] = tmp;
+				cnt++;
+			}
+		}
+		if (cnt == 0) break; //조기에 배열이 정렬되면(swap이 한 번도 일어나지 않았으면) break
+	}
+
+	for (int i = 1; i <= n; i++) cout << v[i] << ' '; //정렬된 배열 출력
+
+	return 0;
+}
 ```
 
 ## Reference
