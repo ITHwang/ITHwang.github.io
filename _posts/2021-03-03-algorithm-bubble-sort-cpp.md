@@ -33,8 +33,8 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
 - 1st outer loop: 1~6번째 숫자들 중 최댓값을 6번째 자리에 배정
     - inner loop
         <div class="mermaid">
-            graph LR
-            A(13)==Don't swap===B(23)---C(11)---D(7)---E(5)---F(15)
+            graph LR;
+            A(13)==Don't swap===B(23)---C(11)---D(7)---E(5)---F(15);
         </div>
         <div class="mermaid">
             graph LR
