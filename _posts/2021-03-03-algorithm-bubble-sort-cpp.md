@@ -29,94 +29,94 @@ N개의 원소일 때 n-1만큼의 outer loop가 돌고, 그 안에서 inner loo
 
 - 1st outer loop: 1~6번째 숫자들 중 최댓값을 6번째 자리에 배정
     - inner loop
-        ```mermaid
-        graph LR
-        A(13)==Don't swap===B(23)---C(11)---D(7)---E(5)---F(15)
-        ```
-        ```mermaid
-        graph LR
-        A(13)---B(23)==swap===C(11)---D(7)---E(5)---F(15)
-        ```
-        ```mermaid
-        graph LR
-        A(13)---B(11)---C(23)==swap===D(7)---E(5)---F(15)
-        ```
-        ```mermaid
-        graph LR
-        A(13)---B(11)---C(7)---D(23)==swap===E(5)---F(15)
-        ```
-        ```mermaid
-        graph LR
-        A(13)---B(11)---C(7)---D(5)---E(23)==swap===F(15)
-        ```
-        ```mermaid
-        graph LR
-        A(13)---B(11)---C(7)---D(5)---E(15)---F(23)
-        ```
+        <div class="mermaid">
+            graph LR
+            A(13)==Don't swap===B(23)---C(11)---D(7)---E(5)---F(15)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(13)---B(23)==swap===C(11)---D(7)---E(5)---F(15)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(13)---B(11)---C(23)==swap===D(7)---E(5)---F(15)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(13)---B(11)---C(7)---D(23)==swap===E(5)---F(15)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(13)---B(11)---C(7)---D(5)---E(23)==swap===F(15)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(13)---B(11)---C(7)---D(5)---E(15)---F(23)
+        </div>
 - 2nd outer loop: 1~5번째 숫자들 중 최댓값을 5번째 자리에 배정
     - inner loop
-        ```mermaid
-        graph LR
-        A(13)==swap===B(11)---C(7)---D(5)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(11)---B(13)==swap===C(7)---D(5)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(11)---B(7)---C(13)==swap===D(5)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(11)---B(7)---C(5)---D(13)==Don't swap===E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(11)---B(7)---C(5)---D(13)---E(15)---F(23)
-        ```
+        <div class="mermaid">
+            graph LR
+            A(13)==swap===B(11)---C(7)---D(5)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(11)---B(13)==swap===C(7)---D(5)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(11)---B(7)---C(13)==swap===D(5)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(11)---B(7)---C(5)---D(13)==Don't swap===E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(11)---B(7)---C(5)---D(13)---E(15)---F(23)
+        </div>
 - 3rd outer loop: 1~4번째 숫자들 중 최댓값을 4번째 자리에 배정
     - inner loop
-        ```mermaid
-        graph LR
-        A(11)==swap===B(7)---C(5)---D(13)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(7)---B(11)==swap===C(5)---D(13)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(7)---B(5)---C(11)==Don't swap===D(13)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(7)---B(5)---C(11)---D(13)---E(15)---F(23)
-        ```
+        <div class="mermaid">
+            graph LR
+            A(11)==swap===B(7)---C(5)---D(13)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(7)---B(11)==swap===C(5)---D(13)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(7)---B(5)---C(11)==Don't swap===D(13)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(7)---B(5)---C(11)---D(13)---E(15)---F(23)
+        </div>
 - 4th outer loop: 1~3번째 숫자들 중 최댓값을 3번째 자리에 배정
     - inner loop
-        ```mermaid
-        graph LR
-        A(7)==swap===B(5)---C(11)---D(13)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(5)---B(7)==Don't swap===C(11)---D(13)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
-        ```
+        <div class="mermaid">
+            graph LR
+            A(7)==swap===B(5)---C(11)---D(13)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(5)---B(7)==Don't swap===C(11)---D(13)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
+        </div>
 - 5th outer loop: 1~2번째 숫자들 중 최댓값을 2번째 자리에 배정
     - inner loop
-        ```mermaid
-        graph LR
-        A(7)==swap===B(5)---C(11)---D(13)---E(15)---F(23)
-        ```
-        ```mermaid
-        graph LR
-        A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
-        ```
+        <div class="mermaid">
+            graph LR
+            A(7)==swap===B(5)---C(11)---D(13)---E(15)---F(23)
+        </div>
+        <div class="mermaid">
+            graph LR
+            A(5)---B(7)---C(11)---D(13)---E(15)---F(23)
+        </div>
 
 ## Pseudo-code
 ---
