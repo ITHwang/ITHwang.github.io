@@ -1,8 +1,9 @@
 ---
 layout: single
 title: "버블 정렬(Bubble sort) with C++"
-use_mermaid = true
 ---
+
+<script src="https://github.com/ITHwang/ITHwang.github.io/blob/master/js/mermaid.min.js"></script>
 
 ## Description
 ---
