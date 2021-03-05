@@ -34,6 +34,7 @@ comments:
   utterances:
     theme: "github-light" # "github-dark"
     issue_term: "pathname"
+    label: "Comment"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
