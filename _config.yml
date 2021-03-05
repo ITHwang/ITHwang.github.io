@@ -32,8 +32,8 @@ words_per_minute         : 200
 comments:
   provider               : "utterances" # "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   utterances:
-  theme: "github-light" # "github-dark"
-  issue_term: "pathname"
+    theme: "github-light" # "github-dark"
+    issue_term: "pathname"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
