@@ -61,15 +61,6 @@ layout: default
       {% include comments.html %}
     {% endif %}
   </article>
-
-  <!-- utterances -->
-  <script src="https://utteranc.es/client.js"
-          repo="ITHwang/ITHwang.github.io"
-          issue-term="title"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
   
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
