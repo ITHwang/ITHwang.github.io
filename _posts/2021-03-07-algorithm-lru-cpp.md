@@ -6,7 +6,7 @@ title: "LRU 알고리즘(Least Recently Used Algorithm) with C++"
 ## Description
 ---
 
-**LRU 알고리즘**(Least Recently Used Algorithm)은 memory를 paging으로 최적화할 때 사용하는 [page replacement algorithm](https://github.com/ITHwang/ITHwang.github.io/blob/master/_posts/2021-03-08-algorithm-page-replacement-algorithm.md) 중 하나다. page fault 및 page replacement가 발생했을 때, 메모리 최적화를 위해 말 그대로 <u>가장 오랫동안 참조되지 않은</u> 메모리를 disk로 swap out한다.
+**LRU 알고리즘**(Least Recently Used Algorithm)은 memory를 paging으로 최적화할 때 사용하는 [page replacement algorithm](https://ithwang.github.io/algorithm-page-replacement-algorithm) 중 하나다. page fault 및 page replacement가 발생했을 때, 메모리 최적화를 위해 말 그대로 <u>가장 오랫동안 참조되지 않은</u> 메모리를 disk로 swap out한다.
 
 이 idea는 page replacement뿐만 아니라 용량 최적화가 필요한 케이스들에서 두루 활용된다.
 

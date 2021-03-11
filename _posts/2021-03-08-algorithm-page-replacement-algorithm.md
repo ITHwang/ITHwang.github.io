@@ -3,7 +3,7 @@ layout: single
 title: "페이지 교체 알고리즘(Page Replacement Algorithm)이 필요한 이유"
 ---
 
-페이지 교체 알고리즘 중 하나인 [LRU 알고리즘](https://github.com/ITHwang/ITHwang.github.io/blob/master/_posts/2021-03-07-algorithm-lru-cpp.md)에 대해 포스팅하다가, 이러한 알고리즘이 왜 필요한지 알아야 할 것 같았다.
+페이지 교체 알고리즘 중 하나인 [LRU 알고리즘](https://ithwang.github.io/algorithm-lru-cpp)에 대해 포스팅하다가, 이러한 알고리즘이 왜 필요한지 알아야 할 것 같았다.
 
 이유는 <u>'효과적인 page replacement를 통해 메모리를 최적화하기 위해'</u>다. 다만 이 글에서는 page replacement가 발생하는 <strong>paging 기법</strong>과 이 기법을 뒷받침해주는 <strong>virtual memory</strong>에 대해 살펴보면서 더 깊은 이해를 도모하고자 한다.
 
@@ -66,7 +66,7 @@ page replacement가 필요할 때 physical memory에서 빼고자 하는 <u><i>v
 
 반면, 거의 참조되지 않는 데이터를 disk로 swap out해놓으면 이 데이터를 swap in할 상황이 적게 발생하므로, page fault와 page replacement가 또한 적게 발생하면서 메모리 참조 비용을 덜 수 있다.
 
-따라서 페이지 교체 알고리즘은 victim 데이터를 결정하는 알고리즘이며 메모리 최적화를 위한 알고리즘이다. 예시로 FIFO(First In First Out), OPT(OPTimal replacement), [LRU(Least Recently Used)]((https://github.com/ITHwang/ITHwang.github.io/blob/master/_posts/2021-03-07-algorithm-lru-cpp.md)), LFU(Least Frequently Used) 등이 있다.
+따라서 페이지 교체 알고리즘은 victim 데이터를 결정하는 알고리즘이며 메모리 최적화를 위한 알고리즘이다. 예시로 FIFO(First In First Out), OPT(OPTimal replacement), [LRU(Least Recently Used)](https://ithwang.github.io/algorithm-lru-cpp), LFU(Least Frequently Used) 등이 있다.
 
 ## Reference
 ---
