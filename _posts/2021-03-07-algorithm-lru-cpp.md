@@ -13,7 +13,6 @@ title: "LRU 알고리즘(Least Recently Used Algorithm) with C++"
 ## 응용 문제
 ---
 
-<!-- ![lru-1](https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210307-lru-1.png?raw=true) -->
 ![lru-1](/_images/20210307-lru-1.png?raw=true)
 
 - Input: 첫 번째 줄에 캐시 크기와 작업 개수가 입력되고, 두 번째 줄에 작업 번호가 작업 개수만큼 주어진다.
@@ -26,7 +25,7 @@ title: "LRU 알고리즘(Least Recently Used Algorithm) with C++"
 - Output: 마지막 작업 후 캐시 메모리의 상태를 가장 최근 사용된 작업부터 차례로 출력한다.
 
     ex)
-    
+
         7 5 3 2 6
 
 - Code
