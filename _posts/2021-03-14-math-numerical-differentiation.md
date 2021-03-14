@@ -7,7 +7,7 @@ use_math: true
 ## Introduction
 ---
 
-**수치 미분** \(\left\)Numerical Differentiation\(\right\)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
+**수치 미분**\(\left(Numerical Differentiation\right)\)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
 
 ## 테일러 급수
 ---
