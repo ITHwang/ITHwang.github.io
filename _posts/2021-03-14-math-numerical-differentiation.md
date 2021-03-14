@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "중앙차분이 가장 정확한 이유\text{(}테일러 급수로 증명\text{)}"
+title: "중앙차분이 가장 정확한 이유\\text{(}테일러 급수로 증명\\text{)}"
 use_math: true
 ---
 
