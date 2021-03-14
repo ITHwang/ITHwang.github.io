@@ -7,7 +7,7 @@ use_math: true
 ## Introduction
 ---
 
-**수치 미분** (Numerical Differentiation)에는 **전진차분** (Forward Difference), **후진차분** (Backward Difference) 그리고 **중앙차분** (Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
+**수치 미분**(Numerical\,Differentiation)에는 **전진차분**(Forward\,Difference), **후진차분**(Backward\,Difference) 그리고 **중앙차분** (Central\,Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
 
 ## 테일러 급수
 ---
@@ -70,7 +70,7 @@ n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b
 
 식 9에서 \(f(x-h)\)와 \(f(x+h)\)을 점 \(x\)에 대해서 오차를 찾기 위해 세 제곱까지 테일러 급수로 근사화하면,
 
-\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_1) and,\]
+\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_1)\,and,\]
 \[f(x-h) = f(x) - hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_2),\]
 \[where\,x \le c_1 \le (x+h)\,and\,(x-h) \le c_2 \le x.\tag{10}\]
 
