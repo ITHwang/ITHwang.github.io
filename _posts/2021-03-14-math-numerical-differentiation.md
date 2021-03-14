@@ -7,12 +7,12 @@ use_math: true
 ## Introduction
 ---
 
-**수치 미분**(Numerical Differentiation)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
+**수치 미분** (Numerical Differentiation)에는 **전진차분** (Forward Difference), **후진차분** (Backward Difference) 그리고 **중앙차분** (Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
 
 ## 테일러 급수
 ---
 
-**테일러 급수**(Taylor series)는 난해한 함수를 연산하기 쉽게 <u>특정 지점에서 다항식으로 근사화</u>하는 방법이다.
+**테일러 급수**(Taylor\,series)는 난해한 함수를 연산하기 쉽게 <u>특정 지점에서 다항식으로 근사화</u>하는 방법이다.
 
 특정 지점 \(a\)에서 \(f(x)\)를 다항식으로 다음과 같이 근사화 할 수 있다.
 
@@ -70,7 +70,7 @@ n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b
 
 식 9에서 \(f(x-h)\)와 \(f(x+h)\)을 점 \(x\)에 대해서 오차를 찾기 위해 세 제곱까지 테일러 급수로 근사화하면,
 
-\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_1) /text{and,}\]
+\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_1) and,\]
 \[f(x-h) = f(x) - hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_2),\]
 \[where\,x \le c_1 \le (x+h)\,and\,(x-h) \le c_2 \le x.\tag{10}\]
 
@@ -83,7 +83,7 @@ n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b
 ## Conclusion
 ---
 
-따라서 보통 수치 미분을 구현할 때 중앙차분을 이용하여 기울기를 구한다. 물론 알고리즘에는 오차가 아예 없는 **해석 미분**(Analytical Differentiation)을 이용하나, 복잡해질 수록 버그가 발생할 확률이 높으므로 알고리즘의 결과값을 중앙차분으로 검산할 수 있다.
+따라서 보통 수치 미분을 구현할 때 중앙차분을 이용하여 기울기를 구한다. 물론 알고리즘에는 오차가 아예 없는 **해석 미분**(Analytical\,Differentiation)을 이용하나, 복잡해질 수록 버그가 발생할 확률이 높으므로 알고리즘의 결과값을 중앙차분으로 검산할 수 있다.
 
 ## Reference
 ---
