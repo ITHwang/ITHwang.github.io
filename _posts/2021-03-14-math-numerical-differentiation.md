@@ -7,7 +7,7 @@ use_math: true
 ## Introduction
 ---
 
-**수치 미분**\(\left(Numerical Differentiation\right)\)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
+**수치 미분**(Numerical Differentiation)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
 
 ## 테일러 급수
 ---
@@ -16,7 +16,7 @@ use_math: true
 
 특정 지점 \(a\)에서 \(f(x)\)를 다항식으로 다음과 같이 근사화 할 수 있다.
 
-\[f(x) = f(a) + f'(a)(x-a) + \frac{1}{2!}f'' (a)(x-a)^2 + \frac{1}{3!}f''' (a)(x-a)^3 + \cdots = \sum_{k=0}^{\infty} {\frac{f^{(k)}(a)}{k!}(x-a)^k}.\tag{1}\]
+\[f(x) = f(a) + f' (a)(x-a) + \frac{1}{2!}f'' (a)(x-a)^2 + \frac{1}{3!}f''' (a)(x-a)^3 + \cdots = \sum_{k=0}^{\infty} {\frac{f^{(k)}(a)}{k!}(x-a)^k}.\tag{1}\]
 
 무한히 연산할 수는 없을 터, n까지 절단했을 때, 
 
@@ -30,15 +30,16 @@ n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b
 
 전진차분으로 미분하면, 
 
-\[f'(x) = \lim_{h \to 0} {\frac{f(x+h) - f(x)}{h}}.\tag{3}\]
+\[f' (x) = \lim_{h \to 0} {\frac{f(x+h) - f(x)}{h}}.\tag{3}\]
 
 식 3에서 \(f(x+h)\)을 점 \(x\)에 대해서 제곱까지 테일러 급수로 근사화하면,
 
-\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f''(c)\\,\,where\,c\,is\,some\,number\,between\,x\,and\,x+h.\tag{4}\]
+\[f(x+h) = f(x) + hf' (x) + \frac{h^2}{2}f'' (c)\]
+\[\text{, where c is some number between x and x+h.}\tag{4}\]
 
 식 4를 \(f(x)\)에 대해서 정리하면,
 
-\[f'(x) = \frac{f(x+h) - f(x)}{h} - \frac{h}{2}f''(c).\tag{5}\]
+\[f'(x) = \frac{f(x+h) - f(x)}{h} - \frac{h}{2}f'' (c).\tag{5}\]
 
 즉, 식 3을 식 5로 근사화 할 수 있으며, \(O(h)\)만큼의 오차를 가진다.
 
@@ -51,11 +52,12 @@ n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b
 
 식 6에서 \(f(x-h)\)을 점 \(x\)에 대해서 제곱까지 테일러 급수로 근사화하면,
 
-\[f(x-h) = f(x) - hf'(x) + \frac{h^2}{2}f''(c)\\,\,where\,c\,is\,some\,number\,between\,x-h\,and\,x.\tag{7}\]
+\[f(x-h) = f(x) - hf'(x) + \frac{h^2}{2}f''(c)\]
+\[\text{, where c is some number between x-h and x.}\tag{7}\]
 
 식 7를 \(f(x)\)에 대해서 정리하면,
 
-\[f'(x) = \frac{f(x) - f(x-h)}{h} + \frac{h}{2}f''(c).\tag{8}\]
+\[f'(x) = \frac{f(x) - f(x-h)}{h} + \frac{h}{2}f'' (c).\tag{8}\]
 
 즉, 식 6을 식 8로 근사화 할 수 있으며, 이것도 \(O(h)\)만큼의 오차를 가진다.
 
@@ -68,13 +70,13 @@ n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b
 
 식 9에서 \(f(x-h)\)와 \(f(x+h)\)을 점 \(x\)에 대해서 오차를 찾기 위해 세 제곱까지 테일러 급수로 근사화하면,
 
-\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f''(x) + \frac{h^3}{3!}f'''(c_1)\,and\\
-f(x-h) = f(x) - hf'(x) + \frac{h^2}{2}f''(x) + \frac{h^3}{3!}f'''(c_2),\\
-where\,x \le c_1 \le (x+h)\,and\,(x-h) \le c_2 \le x.\tag{10}\]
+\[f(x+h) = f(x) + hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_1) /text{and,}\]
+\[f(x-h) = f(x) - hf'(x) + \frac{h^2}{2}f'' (x) + \frac{h^3}{3!}f''' (c_2),\]
+\[where\,x \le c_1 \le (x+h)\,and\,(x-h) \le c_2 \le x.\tag{10}\]
 
 식 10에서 \(f(x+h) - f(x-h)\)을 한 후 정리하면,
 
-\[f'(x) = \lim_{h \to 0} {\frac{f(x+h) - f(x-h)}{2h}} - \frac{h^2}{3!}\frac{f'''(c_1) + f'''(c_2)}{2}.\tag{11}\]
+\[f'(x) = \lim_{h \to 0} {\frac{f(x+h) - f(x-h)}{2h}} - \frac{h^2}{3!}\frac{f''' (c_1) + f''' (c_2)}{2}.\tag{11}\]
 
 즉, 식 9을 식 11로 근사화 할 수 있으며, 이는 **전진차분과 후진차분과 달리 \(O(h^2)\)만큼의 오차를 가지므로 가장 오차가 작음**을 알 수 있다.(\(h\)는 \(x_i\)와 \(x_{i+1}\)의 차로서 충분히 작은 수다.)
 
