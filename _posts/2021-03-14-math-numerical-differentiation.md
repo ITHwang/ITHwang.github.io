@@ -7,7 +7,7 @@ use_math: true
 ## Introduction
 ---
 
-**수치 미분**(Numerical Differentiation)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
+**수치 미분**\(Numerical Differentiation)에는 **전진차분**(Forward Difference), **후진차분**(Backward Difference) 그리고 **중앙차분**(Central Difference)이 있다. 그 중 중앙차분의 오차가 가장 작다는 것을 각 미분법을 <u>테일러 급수로 근사화</u>하여 증명한다.
 
 ## 테일러 급수
 ---
@@ -16,11 +16,12 @@ use_math: true
 
 특정 지점 \(a\)에서 \(f(x)\)를 다항식으로 다음과 같이 근사화 할 수 있다.
 
-\[f(x) = f(a) + f'(a)(x-a) + \frac{1}{2!}f''(a)(x-a)^2 + \frac{1}{3!}f'''(a)(x-a)^3 + \cdots = \sum_{k=0}^{\infty} {\frac{f^{(k)}(a)}{k!}(x-a)^k}.\tag{1}\]
+\[f(x) = f(a) + f'(a)(x-a) + \frac{1}{2!}f'' (a)(x-a)^2 + \frac{1}{3!}f''' (a)(x-a)^3 + \cdots = \sum_{k=0}^{\infty} {\frac{f^{(k)}(a)}{k!}(x-a)^k}.\tag{1}\]
 
 무한히 연산할 수는 없을 터, n까지 절단했을 때, 
 
-\[f(x) = \sum_{k=0}^{n} {\frac{f^{(k)}(a)}{k!}(x-a)^k} + R_{n+1}(x)\\, where\,R_{n+1}(x) = \frac{f^{n+1}(b)}{(n+1)!}(x-a)^{n+1}.\tag{2}\]
+\[f(x) = \sum_{k=0}^{n} {\frac{f^{(k)}(a)}{k!}(x-a)^k} + R_{n+1}(x)\]
+\[, where\,R_{n+1}(x) = \frac{f^{n+1}(b)}{(n+1)!}(x-a)^{n+1}.\tag{2}\]
 
 n 이후 나머지 항인 \(R_{n+1}(x)\)을 절단오차라고 하며, 이 때 b는 \([a, x]\) 또는 \([x, a]\)에 속하는 적당한 실수다.
 
