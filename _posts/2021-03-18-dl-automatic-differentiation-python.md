@@ -7,7 +7,7 @@ use_math: true
 ## Introduction
 ---
 
-현대 딥러닝 프레임워크 내에서는 유저가 기울기(미분)을 직접 계산하면서 역전파를 구현하지 않는다. 자동으로 기울기를 이끌어내는 뉴럴 네트워크 연산을 지원하기 때문이다. 즉 \(loss function\,L\)부터 그 아래 편미분들까지 자동으로 미분하는 것을 **자동 미분**\(Automatic\,Differentiation;\,AD\)이라고 하며, 이를 구현하기 위해 **웬거트 리스트**\(wengert\,list\)를 이용한다. 따라서 본문에서는 웬거트 리스트를 이용해 자동 미분을 구현해보고 자동 미분의 장점에 대해 다룬다.
+현대 딥러닝 프레임워크 내에서는 유저가 기울기를 직접 계산하면서 역전파를 구현하지 않는다. 자동으로 기울기를 이끌어내는 뉴럴 네트워크 연산을 지원하기 때문이다. 즉 \(loss function\,L\)부터 그 아래 편미분들까지 자동으로 미분하는 것을 **자동 미분**\(Automatic\,Differentiation;\,AD\)이라고 하며, 이를 구현하기 위해 **웬거트 리스트**\(wengert\,list\)를 이용한다. 따라서 본문에서는 웬거트 리스트를 이용해 자동 미분을 구현해보고 자동 미분의 장점에 대해 다룬다.
 
 ## Wengert list
 ---
@@ -16,7 +16,7 @@ use_math: true
 
     구글링해도 정의가 나오지 않아 당황했다... 다만 스택오버플로우에서 비슷한 주제로 나눈 QnA를 찾았고, <u>"웬거트 리스트란 연산들이 이루어지는 순서를 기록하는 <strong>녹음 테이프</strong>다"</u>라는 답변이 있었다.
     
-    쉽게 말해 연산 순서, 각 연산의 input과 output 등을 기억하여 역전파에 활용하겠다는 것이다. 제대로 된 정의와 설명은 \(\text{Wengert, Robert Edwin. "A simple automatic derivative evaluation program." Communications of the ACM 7.8 (1964): 463-464.}\)에서 찾아볼 수 있다.(1960년대 논문이라 열람하기도 힘들고 부담스러웠다...)
+    쉽게 말해 연산 순서, 각 연산의 input과 output 등을 기억하여 역전파에 활용하겠다는 것이다. 제대로 된 정의와 설명은 \(\text{Wengert, Robert Edwin. "A simple automatic derivative evaluation program." Communications of the ACM 7.8 (1964): 463-464.}\)에서 찾아볼 수 있다. ~~1960년대 논문이라 열람하기도 힘들고 부담스러웠다...~~
 
 - Example
 
@@ -138,12 +138,12 @@ use_math: true
 
         <div class="mermaid">
             graph LR
-            a[x1]-- x1 -->b((+))-- z1 -->d((+))-- z2 -->f((^2))-- f -->g[f]
-            a-- x1 -->b
-            e[x2]-- x2 -->d
-            g-. df/df .->f -. df/dz2 .->d-. df/dx2 .->e
-            d-. df/dz1 .->b-. df/dx1 .->a
-            b-. df/dx1 .->a
+            A[x1]-- x1 -->B((+))-- z1 -->C((+))-- z2 -->D((^2))-- f -->E[f]
+            A-- x1 -->B
+            F[x2]-- x2 -->C
+            E-. df/df .->D -. df/dz2 .->C-. df/dz1 .->B-. df/dx1 .->A
+            C-. df/dx2 .->F
+            B-. df/dx1 .->A
         </div>
 
 3. Example
@@ -158,12 +158,12 @@ use_math: true
 
     <div class="mermaid">
         graph LR
-        a[3]-- 3 -->b((+))-- 6 -->d((+))-- 13 -->f((^2))-- 169 -->g[169]
-        a-- 3 -->b
-        e[7]-- 7 -->d
-        g-. 1 .->f -. 26 .->d-. 26 .->e
-        d-. 26 .->b-. 26 .->a
-        b-. 26 .->a
+        A[3]-- 3 -->B((+))-- 6 -->C((+))-- 13 -->D((^2))-- 169 -->E[169]
+        A-- 3 -->B
+        F[7]-- 7 -->C
+        E-. 1 .->D -. 26 .->C-. 26 .->B-. 26 .->A
+        C-. 26 .->F
+        B-. 26 .->A
     </div>
 
 ## Advantage of AD
@@ -177,11 +177,11 @@ use_math: true
 \[z_2 = f_2(z_1)\]
 \[z_3 = f_3(z_2)\]
 \[\cdots\]
-\[z_m = f_m(z_{m-1})\tag{5}\]
+\[z_m = f_m(z_{m-1}) \tag{5}\]
 
 기존 미분으로 \(\frac{dz_m}{dz_0}\)을 찾기 위해 chain rule을 적용하면,
 
-\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_{m-2}}\cdots\frac{z_2}{z_1}\frac{z_1}{z_0}\tag{6}\]
+\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_{m-2}}\cdots\frac{z_2}{z_1}\frac{z_1}{z_0} \tag{6}\]
 
 이며, 런타임 이전에 이를 `backward()`에 수동적으로 코딩해야 한다. 
 
@@ -193,26 +193,26 @@ use_math: true
 
 식 6에서,
 
-\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_0}\tag{7}\]
+\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_0} \tag{7}\]
 
 을 도출할 수 있으며, 식을 단순화 하기 위해 \(h_{i,j}\)을 \(\frac{dz_i}{dz_j}\)이라 하고, \(z_0\)에서의 \(\frac{dz_i}{dz_j}\) 값을 \(h_{i,j}(z_0)\)라고 정의하면 다음과 같다.
 
 \[h_{m,0}(z_0) = f' _m(z_m)h_{m-1,0}(z_0)\]
-\[= f' _m(z_m)f' _{m-1}(z_{m-1})h_{m-2,0}(z_0)\]
-\[= f' _m(z_m)f' _{m-1}(z_{m-1})f' _{m-2}(z_{m-2})h_{m-3,0}(z_0)\]
+\[h_{m,0}(z_0) = f' _m(z_m)f' _{m-1}(z_{m-1})h_{m-2,0}(z_0)\]
+\[h_{m,0}(z_0) = f' _m(z_m)f' _{m-1}(z_{m-1})f' _{m-2}(z_{m-2})h_{m-3,0}(z_0)\]
 \[\cdots\]
-\[= f' _m(z_m)f' _{m-1}(z_{m-1})\cdots f' _2(z_2)h_{1,0}(z_0)\]
-\[= f' _m(z_m)f' _{m-1}(z_{m-1})\cdots f' _2(z_2)f' _1(z_1)\tag{8}\]
+\[h_{m,0}(z_0) = f' _m(z_m)f' _{m-1}(z_{m-1}) \cdots f' _2(z_2)h_{1,0}(z_0)\]
+\[h_{m,0}(z_0) = f' _m(z_m)f' _{m-1}(z_{m-1}) \cdots f' _2(z_2)f' _1(z_1) \tag{8}\]
 
 우리가 자동 미분으로 `backward()`를 실행하여 \(h_{m,0}(z_0)\)을 구하고자 한다면, 식 8에서의 연산 순서는 다음과 같다.
 
-\[h_{m,0}(z_0) = (((f' _m(z_m)f' _{m-1}(z_{m-1}))f' _{m-2}(z_{m-2}))\cdots f' _2(z_2))f' _1(z_1)\tag{9}\]
+\[h_{m,0}(z_0) = (((f' _m(z_m)f' _{m-1}(z_{m-1}))f' _{m-2}(z_{m-2})) \cdots f' _2(z_2))f' _1(z_1) \tag{9}\]
 
 즉 앞 순서에서 연산된 미분값을 활용하여 각 파라미터에 대한 출력의 미분값을 손쉽게 구할 수 있다. 예를 들어 \(h_{m,10}\)을 구할 때 앞서 연산된 \(h_{m,11}\)에다가 \(\frac{dz_{11}}{dz_{10}}\)만 계산해서 곱해주면 되는 것이다. 이때 \(h_{m,11}\)는 런타임에 동적으로 정의된 것이므로 자동 미분을 **동적 계산 그래프** 또는 **Define-by-run**이라고 부르기도 한다. Dynamic Programming과 매우 유사하다! \(\frac{dz_{11}}{dz_{10}}\)와 같이 그때마다 계산하는 미분은 각 함수의 `backward()`에 해당하므로 for loop이나 recursive programming으로 짜주면 자동으로 미분할 수 있다.
 
 ## Conclusion
 ---
-자동 미분은 Pytorch, Tensorflow2와 같은 현대 딥러닝 프레임워크에서 적극적으로 활용되고 있다. 특히 Pytorch에서는 중간 결과마다 계산 그래프 내 연산과 관련이 있는 부분만 저장하여, 독립적으로 계산 그래프들이 자유롭게 섞이거나 병합될 수 있도록 했다. 이는 하나의 그래프가 끝났을 때 자동으로 메모리가 해제되어 메모리 최적화에도 수월하다고 한다.
+자동 미분은 Pytorch, Tensorflow2와 같은 현대 딥러닝 프레임워크에서 적극적으로 활용되고 있다. 특히 Pytorch에서는 중간 결과마다 계산 그래프 내 <u>연산과 관련이 있는 부분만 저장</u>하여, 독립적으로 계산 그래프들이 자유롭게 섞이거나 병합될 수 있도록 했다. 이는 하나의 그래프가 끝났을 때 자동으로 메모리가 해제되어 메모리 최적화에도 수월하다고 한다.
 
 ## Reference
 ---
@@ -220,4 +220,4 @@ use_math: true
 - [Where is Wengert List in TensorFlow? - stackoverflow](https://stackoverflow.com/questions/43863111/where-is-wengert-list-in-tensorflow)
 - [William W. Cohen, "Automatic Reverse-Mode Differentiation: Lecture Notes"](http://www.cs.cmu.edu/~wcohen/10-605/notes/autodiff.pdf)
 - [Paszke, Adam, et al. "Automatic differentiation in torch"](https://openreview.net/pdf?id=BJJsrmfCZ)
-- 사이토 고키, 『밑바닥부터 시작하는 딥러닝3』, 개앞맵시, 한빛미디어(주), 2020, 73~79쪽
+- 사이토 고키, 『밑바닥부터 시작하는 딥러닝3』, 개앞맵시, 한빛미디어, 2020, 73~79쪽
