@@ -138,9 +138,9 @@ use_math: true
 
         <div class="mermaid">
             graph LR
-            A[x1]-- x1 -->B((+))-- z1 -->C((+))-- z2 -->D((^2))-- f -->E[f]
-            A-- x1 -->B
-            F[x2]-- x2 -->C
+            A[x1]-->|x1|B((+))-->|z1|C((+))-->|z2|D((^2))-->|f|E[f]
+            A-->|x1|B
+            F[x2]-->|x2|C
             E-. df/df .->D -. df/dz2 .->C-. df/dz1 .->B-. df/dx1 .->A
             C-. df/dx2 .->F
             B-. df/dx1 .->A
@@ -158,9 +158,9 @@ use_math: true
 
     <div class="mermaid">
         graph LR
-        A[3]-- 3 -->B((+))-- 6 -->C((+))-- 13 -->D((^2))-- 169 -->E[169]
-        A-- 3 -->B
-        F[7]-- 7 -->C
+        A[3]-->|3|B((+))-->|6|C((+))-->|13|D((^2))-->|169|E[169]
+        A-->|3|B
+        F[7]-->|7|C
         E-. 1 .->D -. 26 .->C-. 26 .->B-. 26 .->A
         C-. 26 .->F
         B-. 26 .->A
@@ -177,11 +177,11 @@ use_math: true
 \[z_2 = f_2(z_1)\]
 \[z_3 = f_3(z_2)\]
 \[\cdots\]
-\[z_m = f_m(z_{m-1})\tag{5}\]
+\[z_m = f_m(z_{m-1}) \tag{5}\]
 
 기존 미분으로 \(\frac{dz_m}{dz_0}\)을 찾기 위해 chain rule을 적용하면,
 
-\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_{m-2}}\cdots\frac{z_2}{z_1}\frac{z_1}{z_0}\tag{6}\]
+\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_{m-2}}\cdots\frac{z_2}{z_1}\frac{z_1}{z_0} \tag{6}\]
 
 이며, 런타임 이전에 이를 `backward()`에 수동적으로 코딩해야 한다. 
 
@@ -193,7 +193,7 @@ use_math: true
 
 식 6에서,
 
-\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_0}\tag{7}\]
+\[\frac{dz_m}{dz_0} = \frac{dz_m}{dz_{m-1}}\frac{dz_{m-1}}{dz_0} \tag{7}\]
 
 을 도출할 수 있으며, 식을 단순화 하기 위해 \(h_{i,j}\)을 \(\frac{dz_i}{dz_j}\)이라 하고, \(z_0\)에서의 \(\frac{dz_i}{dz_j}\) 값을 \(h_{i,j}(z_0)\)라고 정의하면 다음과 같다.
 
@@ -202,11 +202,11 @@ use_math: true
 \[= f_m'(z_m)f_{m-1}'(z_{m-1})f_{m-2}'(z_{m-2})h_{m-3,0}(z_0)\]
 \[\cdots\]
 \[= f_m'(z_m)f_{m-1}'(z_{m-1}) \cdots f_2'(z_2)h_{1,0}(z_0)\]
-\[= f_m'(z_m)f_{m-1}'(z_{m-1}) \cdots f_2'(z_2)f_1'(z_1)\tag{8}\]
+\[= f_m'(z_m)f_{m-1}'(z_{m-1}) \cdots f_2'(z_2)f_1'(z_1) \tag{8}\]
 
 우리가 자동 미분으로 `backward()`를 실행하여 \(h_{m,0}(z_0)\)을 구하고자 한다면, 식 8에서의 연산 순서는 다음과 같다.
 
-\[h_{m,0}(z_0) = (((f_m'(z_m)f_{m-1}'(z_{m-1}))f_{m-2}'(z_{m-2})) \cdots f_2'(z_2))f_1'(z_1)\tag{9}\]
+\[h_{m,0}(z_0) = (((f_m'(z_m)f_{m-1}'(z_{m-1}))f_{m-2}'(z_{m-2})) \cdots f_2'(z_2))f_1'(z_1) \tag{9}\]
 
 즉 앞 순서에서 연산된 미분값을 활용하여 각 파라미터에 대한 출력의 미분값을 손쉽게 구할 수 있다. 예를 들어 \(h_{m,10}\)을 구할 때 앞서 연산된 \(h_{m,11}\)에다가 \(\frac{dz_{11}}{dz_{10}}\)만 계산해서 곱해주면 되는 것이다. 이때 \(h_{m,11}\)는 런타임에 동적으로 정의된 것이므로 자동 미분을 **동적 계산 그래프** 또는 **Define-by-run**이라고 부르기도 한다. Dynamic Programming과 매우 유사하다! \(\frac{dz_{11}}{dz_{10}}\)와 같이 그때마다 계산하는 미분은 각 함수의 `backward()`에 해당하므로 for loop이나 recursive programming으로 짜주면 자동으로 미분할 수 있다.
 
