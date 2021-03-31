@@ -22,9 +22,9 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 우리가 점근 표기법을 사용했다면, 사실 그 표기에 부합하는 함수들은 다수이므로 집합으로 묶을 수 있습니다.
 따라서 점근 표기법을 집합으로 본다면 **\(\Theta\)-notation**이라는 집합의 조건 제시법은 다음와 같습니다.
 
-\(\Theta(g(n))\) = {\(f(n)\): \(there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1g(n) \le f(n) \le c_2g(n) \,for\,all\, n \ge n_0\)}
+\(\Theta(g(n))\) = {\(f(n)\): \(there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1\(g(n)\) \le \(f(n)\) \le c_2\(g(n)\) \,for\,all\, n \ge n_0\)}
 
-즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \{0 \le c_1 g(n) \le f(n) \le c_2 g(n)\}을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
+즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \(0 \le c_1 \(g(n)\) \le \(f(n)\) \le c_2 \(g(n)\)\)을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-1.png?raw=true" alt="Theta-notation"></p>
 
