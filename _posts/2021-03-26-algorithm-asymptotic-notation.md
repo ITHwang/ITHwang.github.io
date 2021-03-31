@@ -11,10 +11,10 @@ use_math: true
 가끔 이를 정밀하게 측정하긴 하지만, 보통 정밀한 running time에 큰 의미를 두지 않습니다.
 결국 이는 input size에 가장 많은 영향을 받으므로, <u>input size가 증가할 때 running time이 어떻게 증가하는지</u>에 대해 아는 것만으로도 효율성을 파악하기에 충분하기 때문이죠.
 
-input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상수 \(c\)로 취급한다면, running time을 \(n\)에 대한 함수 \(f(n) = an^2 + bn + c\)로 표현할 수 있을 것입니다.
+input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상수 \(c\)로 취급한다면, running time을 \(n\)에 대한 함수 \(f(n)\)=\(an^2 + bn + c\)로 표현할 수 있을 것입니다.
 그리고 굉장히 큰 \(n\)에 대해서 \(f(n)\)은 \(n^2\)에 가장 많이 영향을 받으므로 \(n^2\)에 대한 함수로 축약할 수 있을 텐데, 이 때 사용하는 것이 **점근 표기법**(\(Asymptotic\,notation\))입니다.
 
-저는 \(f(n) = O(n^2)\)과 같이 점근 표기법 중 빅-오 표기법만 사용해왔으나, 최근에 표기 의도(\(\text{어떤 running time을 의미하는지}\))에 따라 사용할 수 있는 다양한 표기법에 대해 알게 되었고 이에 대해 정리하려 합니다. 
+저는 \(f(n)\)=\(O(n^2)\)과 같이 점근 표기법 중 빅-오 표기법만 사용해왔으나, 최근에 표기 의도(\(\text{어떤 running time을 의미하는지}\))에 따라 사용할 수 있는 다양한 표기법에 대해 알게 되었고 이에 대해 정리하려 합니다. 
 
 ## \(\Theta\)-notation
 ---
@@ -22,9 +22,9 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 우리가 점근 표기법을 사용했다면, 사실 그 표기에 부합하는 함수들은 다수이므로 집합으로 묶을 수 있습니다.
 따라서 점근 표기법을 집합으로 본다면 **\(\Theta\)-notation**이라는 집합의 조건 제시법은 다음와 같습니다.
 
-\(\Theta(g(n)) =\) {\(f(n): \,there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1g(n) \le f(n) \le c_2g(n) \,for\,all\, n \ge n_0\)}
+\(\Theta(g(n))\) = {\(f(n): \,there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1g(n) \le f(n) \le c_2g(n) \,for\,all\, n \ge n_0\)}
 
-즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \(0 \le c_1g(n) \le f(n) \le c_2g(n)\)을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
+즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \(0 \le c_1 g(n) \le f(n) \le c_2 g(n)\)을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-1.png?raw=true" alt="Theta-notation"></p>
 
@@ -34,8 +34,9 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 또한 \(\Theta(g(n))\)을 정의하기 위해서 그 안에 속한 \(f(n)\)이 \(asymptotically\,nonnegative\) 해야 합니다. 
 다시 말해 충분히 큰 모든 \(n\)에 대해서 항상 양수여야 하며, 그렇지 않다면 \(\Theta(g(n))\)은 공집합이 될 것입니다. 이 조건은 다른 점근 표기법들에서도 적용됩니다.
 
-만약 \(f(n) = an^2 + bn + c\)을 \(\Theta\)-notation으로 표기한다면, \(0 \le c_1n^2 \le an^2 + bn + c \le c_2n^2\,for\,all\,n \ge n_0\)에 알맞은 \(c_0,\,c_1,\,n_0\)을 찾을 수 있을 것이고 \(f(n) = \Theta(n^2)\)이라고 표기할 수 있습니다.
-이런 식으로 우리는 모든 다항식 \(p(n) = \sum_{i=0}^{d} {a_in^i}\)에 대해서 \(p(n) = \Theta(n^d)\)와 같이 표기하는 것으로 일반화할 수 있습니다.(\(단,\,a_i는\,정수이며\,a_d는\,0보다\,큽니다.\))
+만약 \(f(n) = an^2 + bn + c\)을 \(\Theta\)-notation으로 표기한다면, \(0 \le c_1n^2 \le an^2 + bn + c \le c_2n^2\,for\,all\,n \ge n_0\)에 알맞은 \(c_0,\,c_1,\,n_0\)을 찾을 수 있을 것이고 \(f(n)\)=\(\Theta(n^2)\)이라고 표기할 수 있습니다.
+이런 식으로 우리는 모든 다항식 \(p(n)\)=\(sum_{i=0}^{d} {a_in^i}\)에 대해서 \(p(n)\)=\(\Theta(n^d)\)와 같이 표기하는 것으로 일반화할 수 있습니다.(\(단,\,a_i는\,정수이며\,a_d는\,0보다\,큽니다.\))
+
 
 샌드위치 형식으로 \(f(n)\)을 점근적 표기하는 \(\Theta\)-표기법은 average running time을 표기할 때 주로 사용됩니다.
 
@@ -49,8 +50,7 @@ Upper bound만 남으므로 이 표기법을 조건 제시법으로 표현하면
 
 \(n_0\)보다 큰 모든 \(n\)에 대해서 \(f(n)\)이 \(cg(n)\) 이하라면 \(f(n)\)은 \(O(g(n))\)의 원소가 됩니다.
 
-<!-- <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-2.png?raw=true" alt="Big-oh-notation"></p> -->
-<p style="text-align: center;"><img src="../_images/20210326-asymptotic-notation-2.png" alt="Big-oh-notation"></p>
+<p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-2.png?raw=true" alt="Big-oh-notation"></p>
 
 그림을 통해 직관적으로 \(O\)-notation이 \(\Theta\)-notation보다 덜 엄격한 집합임을 알 수 있습니다.
 즉 \(\Theta\)-notation이 \(O\)-notation의 부분집합이므로 \(\Theta(g(n)) \subseteq O(g(n))\)이라고 할 수 있겠습니다.
@@ -73,8 +73,7 @@ Upper bound만 남으므로 이 표기법을 조건 제시법으로 표현하면
 
 \(n_0\)보다 큰 모든 \(n\)에 대해서 \(f(n)\)이 \(cg(n)\) 이상이라면 \(f(n)\)은 \(\Omega(g(n))\)의 원소가 됩니다.
 
-<!-- <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-3.png?raw=true" alt="Big-omega-notation"></p> -->
-<p style="text-align: center;"><img src="../_images/20210326-asymptotic-notation-3.png" alt="Big-omega-notation"></p>
+<p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-3.png?raw=true" alt="Big-omega-notation"></p>
 
 \(\Omega(g(n))\) 또한 \(\Theta(g(n))\)보다 덜 엄격한 집합이므로 \(\Theta(g(n)) \subseteq \Omega(g(n))\)이 성립합니다. 
 따라서 지금까지 살펴본 세 점근 표기법을 통해 다음과 같은 결론이 도출됩니다.
