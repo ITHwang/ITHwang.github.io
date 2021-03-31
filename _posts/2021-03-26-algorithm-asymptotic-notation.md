@@ -24,7 +24,7 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 
 \(\Theta(g(n))\) = {\(f(n)\): \(there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1g(n)\)\(\le f(n)\)\(\le c_2g(n)\)\(\,for\,all\, n \ge n_0\)}
 
-즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \(0 \le c_1g(n)\)\(\le \(f(n)\)\(\le c_2 g(n)\)을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
+즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \(0 \le c_1g(n)\)\(\le f(n)\)\(\le c_2 g(n)\)을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-1.png?raw=true" alt="Theta-notation"></p>
 
@@ -46,14 +46,14 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 \(\Theta\)-notation에서 lower bound를 없앤 것이 **\(O\)-notation**입니다. 
 Upper bound만 남으므로 이 표기법을 조건 제시법으로 표현하면 다음과 같습니다.
 
-\[O(g(n)) = \{f(n): \text{there exist positive constants \(c\) and \(n_0\) such that \(0 \le f(n) \le cg(n)\) for all \(n \ge n_0\)}\}\]
+\(O(g(n))\)=\{f(n): \text{there exist positive constants \(c\) and \(n_0\) such that \(0 \le f(n)\)\(\le cg(n)\) for all \(n \ge n_0\)\}
 
 \(n_0\)보다 큰 모든 \(n\)에 대해서 \(f(n)\)이 \(cg(n)\) 이하라면 \(f(n)\)은 \(O(g(n))\)의 원소가 됩니다.
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-2.png?raw=true" alt="Big-oh-notation"></p>
 
 그림을 통해 직관적으로 \(O\)-notation이 \(\Theta\)-notation보다 덜 엄격한 집합임을 알 수 있습니다.
-즉 \(\Theta\)-notation이 \(O\)-notation의 부분집합이므로 \(\Theta(g(n)) \subseteq O(g(n))\)이라고 할 수 있겠습니다.
+즉 \(\Theta\)-notation이 \(O\)-notation의 부분집합이므로 \(\Theta(g(n))\)\(\subseteq O(g(n))\)이라고 할 수 있겠습니다.
 
 일부 문헌에서 \(O\)-notation도 \(\Theta\)-notation과 같이 asymptotic tight bound로 기술하고 있으나, 제가 참고한 \(Introduction\,to\,algorithms\,3rd\,edition(Cormen\,et\,al.)\)의 저자는 \(O\)-notation을 **asymptotic upper bound**로 기술하고 있으며, 그는 이를 asymptotic tight bound와 구분해야 한다고 말합니다.
 
@@ -75,10 +75,11 @@ Upper bound만 남으므로 이 표기법을 조건 제시법으로 표현하면
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-3.png?raw=true" alt="Big-omega-notation"></p>
 
-\(\Omega(g(n))\) 또한 \(\Theta(g(n))\)보다 덜 엄격한 집합이므로 \(\Theta(g(n)) \subseteq \Omega(g(n))\)이 성립합니다. 
+\(\Omega(g(n))\) 또한 \(\Theta(g(n))\)보다 덜 엄격한 집합이므로 \(\Theta(g(n))\)\(\subseteq \Omega(g(n))\)이 성립합니다. 
 따라서 지금까지 살펴본 세 점근 표기법을 통해 다음과 같은 결론이 도출됩니다.
 
-> Theorem: For any two functions \(f(n)\) and \(g(n)\), we have \(f(n) = \Theta (g(n))\) if and only if \(f(n) = O (g(n))\) and \(f(n)=\Omega (g(n))\).
+> Theorem: For any two functions \(f(n)\) and \(g(n)\), we have \(f(n)\)=\(\Theta (g(n))\) if and only if \(f(n)\)=\(O(g(n))\) and \(f(n)\)=\(\Omega (g(n))\).
+
 
 best case일 경우, \(\Omega\)-notation을 통해 running time보다 같거나 작은 lower bound를 두면 모든 \(n\)에 부합하므로, best case에 대해 이를 사용하는 것이 적절합니다.
 즉 <u>아무리 작은 running time이라도 lower bound보다 같거나 큼을 보장</u>합니다.
@@ -89,17 +90,17 @@ best case일 경우, \(\Omega\)-notation을 통해 running time보다 같거나 
 ## o-notation and \(\omega\)-notation
 ---
 
-경우에 따라 \(O\)-notation이 제공하는 asymptotic upper bound는 다소 엄격할 수도 있습니다.(\(물론\,\Theta(g(n))\,보다는\,아니지만요.\)) 
-그래서 만약 \(f(n) = 2n\)에 대해 upper bound를 더 올린다면 \(2n = O(n^2)\)과 같이 표현 할 수 있을 것입니다. 
+경우에 따라 \(O\)-notation이 제공하는 asymptotic upper bound는 다소 엄격할 수도 있습니다.(\(물론\,\Theta(g(n))\)\(\,보다는\,아니지만요.\)) 
+그래서 만약 \(f(n)\)\(= 2n\)에 대해 upper bound를 더 올린다면 \(2n = O(n^2)\)과 같이 표현 할 수 있을 것입니다. 
 다만 이와 같이 <u>점근적으로 엄격하지 않은 upper bound</u>라면 소문자로 바꿔서 \(2n=o(n^2)\)라고 표기하는데, 이를 **\(o\)-notation**이라고 합니다.
 
 \(O\)-notation과 가장 큰 차이점은 \(O(g(n))\)에서 upper bound \(cg(n)\)를 성립하는 양수 c가 **한정적**이나, \(o(g(n))\)에서는 **모든 양수**가 c가 될 수 있습니다.
-방금 예시에서 \(f(n)=2n\)에 대해 upper bound를 \(cn^2\)으로 두었는데, \(c\)는 0보다 크기만 하면 절대 \(f(n)\)보다 작을 수 없습니다.
+방금 예시에서 \(f(n)\)\(=2n\)에 대해 upper bound를 \(cn^2\)으로 두었는데, \(c\)는 0보다 크기만 하면 절대 \(f(n)\)보다 작을 수 없습니다.
 
-\(o\)-notation이 타이트한 upper bound를 높인 것처럼, \(\Omega\)-notation이 제공하는 asymptotic lower bound를 더 느슨하게 낮춘다면 소문자로 바꿔서 \(f(n) = \omega (g(n))\)과 같이 표기하는데 이를 **\(\omega\)-notation**이라고 합니다.
-예시로 \(f(n) = n^2/2\)에 대해서 \(f(n) = \omega(n)\)라고 표기할 수 있습니다.
+\(o\)-notation이 타이트한 upper bound를 높인 것처럼, \(\Omega\)-notation이 제공하는 asymptotic lower bound를 더 느슨하게 낮춘다면 소문자로 바꿔서 \(f(n)\)\(= \omega (g(n))\)과 같이 표기하는데 이를 **\(\omega\)-notation**이라고 합니다.
+예시로 \(f(n)\)\(= n^2/2\)에 대해서 \(f(n)\)\(= \omega(n)\)라고 표기할 수 있습니다.
 
-두 표기법 모두 bound \(cg(n)\)보다 크게 상회하거나 하회하는 함수들을 원소로 가지고 있기 때문에, \(f(n) \in \omega (g(n))\)과 \(g(n) \in o (f(n))\)은 <strong>필요충분조건</strong>입니다. 
+두 표기법 모두 bound \(cg(n)\)보다 크게 상회하거나 하회하는 함수들을 원소로 가지고 있기 때문에, \(f(n)\) \(\in \omega (g(n))\)과 \(g(n)\)\(\in o (f(n))\)은 <strong>필요충분조건</strong>입니다. 
 
 ## Comparing functions
 ---
