@@ -46,7 +46,7 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 \(\Theta\)-notation에서 lower bound를 없앤 것이 **\(O\)-notation**입니다. 
 Upper bound만 남으므로 이 표기법을 조건 제시법으로 표현하면 다음과 같습니다.
 
-\(O(g(n))\)=\{f(n): \text{there exist positive constants \(c\) and \(n_0\) such that \(0 \le f(n)\)\(\le cg(n)\) for all \(n \ge n_0\)\}
+\(O(g(n))\)={\(f(n)\): \(there\,exist\,positive\,constants\, c \,and\, n_0 \,such\,that\, 0 \le f(n)\)\(\le cg(n)\)\(\,for\,all\, n \ge n_0\)}
 
 \(n_0\)보다 큰 모든 \(n\)에 대해서 \(f(n)\)이 \(cg(n)\) 이하라면 \(f(n)\)은 \(O(g(n))\)의 원소가 됩니다.
 
@@ -69,7 +69,7 @@ Upper bound만 남으므로 이 표기법을 조건 제시법으로 표현하면
 \(O\)-notation과 반대로, **\(\Omega\)-notation**은 asymptotic lower bound를 제공합니다.
 조건 제시법은 다음과 같습니다.
 
-\[\Omega(g(n)) = \{f(n): \text{there exist positive constants \(c\) and \(n_0\) such that \(0 \le cg(n) \le f(n)\) for all \(n \ge n_0\)}\}\]
+\(\Omega(g(n))\)={\(f(n)\): \(there\,exist\,positive\,constants\, c \,and\, n_0 \,such\,that\, 0 \le cg(n)\)\(\le f(n)\)\(for\,all\, n \ge n_0\)}
 
 \(n_0\)보다 큰 모든 \(n\)에 대해서 \(f(n)\)이 \(cg(n)\) 이상이라면 \(f(n)\)은 \(\Omega(g(n))\)의 원소가 됩니다.
 
