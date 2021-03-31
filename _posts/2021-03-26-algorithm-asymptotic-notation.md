@@ -22,20 +22,20 @@ input size \(n\) 외에 running time에 영향을 주는 요소들을 모두 상
 우리가 점근 표기법을 사용했다면, 사실 그 표기에 부합하는 함수들은 다수이므로 집합으로 묶을 수 있습니다.
 따라서 점근 표기법을 집합으로 본다면 **\(\Theta\)-notation**이라는 집합의 조건 제시법은 다음와 같습니다.
 
-\(\Theta(g(n))\) = {\(f(n): \,there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1g(n) \le f(n) \le c_2g(n) \,for\,all\, n \ge n_0\)}
+\(\Theta(g(n))\) = {\(f(n)\): \(there\,exist\,positive\,constants\, c_1,\,c_2,\,and\,n_0\,such\,that\, 0 \le c_1g(n) \le f(n) \le c_2g(n) \,for\,all\, n \ge n_0\)}
 
-즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \(0 \le c_1 g(n) \le f(n) \le c_2 g(n)\)을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
+즉 \(f(n)\)이 \(n_0\) 이상의 모든 지점에서 \{0 \le c_1 g(n) \le f(n) \le c_2 g(n)\}을 충족한다면 \(\Theta(g(n))\)이라고 표기할 수 있습니다.
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210326-asymptotic-notation-1.png?raw=true" alt="Theta-notation"></p>
 
-충분히 큰 \(n\)에 대해서 상한선 \(c_2g(n)\)과 하한선 \(c_1g(n)\) 사이에 \(f(n)\)이 존재한다면 \(f(n)\)은 집합 \(\Theta(g(n))\)의 원소가 되므로 \(f(n) \in \Theta(g(n))\)이라고도 쓸 수 있습니다.
+충분히 큰 \(n\)에 대해서 상한선 \(c_2g(n)\)과 하한선 \(c_1g(n)\) 사이에 \(f(n)\)이 존재한다면 \(f(n)\)은 집합 \(\Theta(g(n))\)의 원소가 되므로 \(f(n)\)\(\in\)\(\Theta(g(n))\)이라고도 쓸 수 있습니다.
 이 때 우리는 \(g(n)\)이 \(f(n)\)에 대해서 \(asymptotically\,tight\,bound\)되었다고 말합니다.
 
 또한 \(\Theta(g(n))\)을 정의하기 위해서 그 안에 속한 \(f(n)\)이 \(asymptotically\,nonnegative\) 해야 합니다. 
 다시 말해 충분히 큰 모든 \(n\)에 대해서 항상 양수여야 하며, 그렇지 않다면 \(\Theta(g(n))\)은 공집합이 될 것입니다. 이 조건은 다른 점근 표기법들에서도 적용됩니다.
 
-만약 \(f(n) = an^2 + bn + c\)을 \(\Theta\)-notation으로 표기한다면, \(0 \le c_1n^2 \le an^2 + bn + c \le c_2n^2\,for\,all\,n \ge n_0\)에 알맞은 \(c_0,\,c_1,\,n_0\)을 찾을 수 있을 것이고 \(f(n)\)=\(\Theta(n^2)\)이라고 표기할 수 있습니다.
-이런 식으로 우리는 모든 다항식 \(p(n)\)=\(sum_{i=0}^{d} {a_in^i}\)에 대해서 \(p(n)\)=\(\Theta(n^d)\)와 같이 표기하는 것으로 일반화할 수 있습니다.(\(단,\,a_i는\,정수이며\,a_d는\,0보다\,큽니다.\))
+만약 \(f(n)\)=\(an^2 + bn + c\)을 \(\Theta\)-notation으로 표기한다면, \(0 \le c_1n^2 \le an^2 + bn + c \le c_2n^2\,for\,all\,n \ge n_0\)에 알맞은 \(c_0,\,c_1,\,n_0\)을 찾을 수 있을 것이고 \(f(n)\)=\(\Theta(n^2)\)이라고 표기할 수 있습니다.
+이런 식으로 우리는 모든 다항식 \(p(n)\)=\(\sum_{i=0}^{d} {a_in^i}\)에 대해서 \(p(n)\)=\(\Theta(n^d)\)와 같이 표기하는 것으로 일반화할 수 있습니다.(\(단,\,a_i는\,정수이며\,a_d는\,0보다\,큽니다.\))
 
 
 샌드위치 형식으로 \(f(n)\)을 점근적 표기하는 \(\Theta\)-표기법은 average running time을 표기할 때 주로 사용됩니다.
