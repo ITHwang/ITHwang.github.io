@@ -5,7 +5,9 @@ use_math: true
 toc: true
 toc_sticky: true
 tags:
-    - aa
+    - asymptotic notations
+    - time complexity
+    - running time
 ---
 
 ## Introduction
