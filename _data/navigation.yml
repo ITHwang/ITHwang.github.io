@@ -18,5 +18,7 @@ main:
     url: /categories/Math/
   - title: "etc"
     url: /categories/etc/
-  - title: "All"
+  - title: "tags"
+    url: /tags/
+  - title: "categories"
     url: /categories/
