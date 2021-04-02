@@ -5,11 +5,9 @@ use_math: true
 toc: true
 toc_sticky: true
 tags:
-    - asymptotic notations
     - time complexity
-    - running time
 categories:
-    - algorithm
+    - Algorithm
 ---
 
 ## Introduction
