@@ -3,6 +3,7 @@ layout: single
 title: "점근 표기법 총망라!"
 use_math: true
 toc: true
+toc_sticky: true
 ---
 
 ## Introduction
