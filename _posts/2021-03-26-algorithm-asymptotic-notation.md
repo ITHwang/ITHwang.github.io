@@ -8,6 +8,8 @@ tags:
     - asymptotic notations
     - time complexity
     - running time
+categories:
+    - algorithm
 ---
 
 ## Introduction
