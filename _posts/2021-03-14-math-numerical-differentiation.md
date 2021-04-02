@@ -2,6 +2,15 @@
 layout: single
 title: "중앙차분이 가장 정확한 이유(feat. 테일러 급수)"
 use_math: true
+toc: true
+toc_sticky: true
+tags:
+    - calculus
+    - differentiation
+    - numerical differentiation
+    - taylor series
+categories:
+    - Math
 ---
 
 ## Introduction

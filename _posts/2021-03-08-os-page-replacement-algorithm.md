@@ -1,6 +1,14 @@
 ---
 layout: single
 title: "페이지 교체 알고리즘(Page Replacement Algorithm)이 필요한 이유"
+toc: true
+toc_sticky: true
+tags:
+	- page replacement algorithm
+    - virtual memory
+    - paging
+categories:
+    - etc
 ---
 
 페이지 교체 알고리즘 중 하나인 [LRU 알고리즘](https://ithwang.github.io/algorithm-lru-cpp)에 대해 포스팅하다가, 이러한 알고리즘이 왜 필요한지 알아야 할 것 같았다.

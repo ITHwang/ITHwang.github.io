@@ -2,6 +2,18 @@
 layout: single
 title: "자동 미분(feat. 웬거트 리스트)"
 use_math: true
+toc: true
+toc_sticky: true
+tags:
+    - back propagation
+    - differentiation
+    - automatic differentiation
+    - linked list
+    - wengert list
+    - define-by-run
+    - dynamic programming
+categories:
+    - MLDL
 ---
 
 ## Introduction

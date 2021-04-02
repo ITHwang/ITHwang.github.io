@@ -10,7 +10,13 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+  - title: "ML/DL"
+    url: /categories/MLDL/
   - title: "Algorithm"
     url: /categories/Algorithm/
+  - title: "Math"
+    url: /categories/Math/
+  - title: "etc"
+    url: /categories/etc/
   - title: "All"
     url: /categories/
