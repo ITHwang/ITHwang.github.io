@@ -146,7 +146,7 @@ categories:
                     self.delta_list[arg_name] + self.delta_list[eq[0]] * op(args[0], args[1])
     ```
 
-    - 그래프(\(안 나오면 새로고침해주세요!\))
+    - 그래프(\(\text{안 나오면 새로고침해주세요!}\))
 
         <div class="mermaid">
             graph LR
