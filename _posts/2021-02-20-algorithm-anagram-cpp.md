@@ -1,6 +1,12 @@
 ---
 layout: single
 title: "Anagram(아나그램) 문제(C++)"
+toc: true
+toc_sticky: true
+tags:
+    - cpp
+categories:
+    - Algorithm
 ---
 
 ## Description

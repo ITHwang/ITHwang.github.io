@@ -1,6 +1,13 @@
 ---
 layout: single
 title: "선택 정렬(Selection sort) with C++"
+toc: true
+toc_sticky: true
+tags:
+	- sort algorithm
+    - cpp
+categories:
+    - Algorithm
 ---
 
 ## Description

@@ -1,6 +1,13 @@
 ---
 layout: single
 title: "LRU 알고리즘(Least Recently Used Algorithm) with C++"
+toc: true
+toc_sticky: true
+tags:
+	- page replacement algorithm
+    - cpp
+categories:
+    - Algorithm
 ---
 
 ## Description

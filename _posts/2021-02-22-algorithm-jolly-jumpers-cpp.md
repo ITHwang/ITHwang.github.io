@@ -1,6 +1,12 @@
 ---
 layout: single
 title: "Jolly Jumpers 문제(C++)"
+toc: true
+toc_sticky: true
+tags:
+    - cpp
+categories:
+    - Algorithm
 ---
 
 <h2>Description</h2>

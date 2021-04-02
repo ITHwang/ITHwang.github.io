@@ -1,6 +1,13 @@
 ---
 layout: single
 title: "삽입 정렬(Insertion sort) with C++"
+toc: true
+toc_sticky: true
+tags:
+	- sort algorithm
+    - cpp
+categories:
+    - Algorithm
 ---
 
 ## Description

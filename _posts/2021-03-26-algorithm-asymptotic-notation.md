@@ -6,6 +6,9 @@ toc: true
 toc_sticky: true
 tags:
     - time complexity
+    - 빅오 표기법
+    - 세타 표기법
+    - 오메가 표기법
 categories:
     - Algorithm
 ---
