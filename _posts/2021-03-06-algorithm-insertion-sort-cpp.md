@@ -4,7 +4,7 @@ title: "삽입 정렬(Insertion sort) with C++"
 toc: true
 toc_sticky: true
 tags:
-	- sort algorithm
+    - sort algorithm
     - cpp
 categories:
     - Algorithm

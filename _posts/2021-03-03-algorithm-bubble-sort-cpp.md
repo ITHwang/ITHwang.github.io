@@ -4,7 +4,7 @@ title: "버블 정렬(Bubble sort) with C++"
 toc: true
 toc_sticky: true
 tags:
-	- sort algorithm
+    - sort algorithm
     - cpp
 categories:
     - Algorithm

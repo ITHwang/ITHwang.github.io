@@ -4,7 +4,7 @@ title: "페이지 교체 알고리즘(Page Replacement Algorithm)이 필요한 �
 toc: true
 toc_sticky: true
 tags:
-	- page replacement algorithm
+    - page replacement algorithm
     - virtual memory
     - paging
 categories:
