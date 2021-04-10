@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 tags:
     - regularization
-    - L기
+    - L1
     - L2
     - ridge
     - lasso
@@ -154,12 +154,12 @@ categories:
         <td>가능</td>
     </tr>
     <tr>
-        <td><strong>stable(비슷한 데이터에 대한 일관성)</strong></td>
+        <td><strong>stable</strong></td>
         <td>높음</td>
         <td>낮음</td>
     </tr>
     <tr>
-        <td><strong>robustness(outlier에 대한 강건함)</strong></td>
+        <td><strong>robustness</strong></td>
         <td>낮음</td>
         <td>높음</td>
     </tr>
@@ -184,5 +184,5 @@ categories:
 
 - [Bias-Variance Decomposition](https://ratsgo.github.io/machine%20learning/2017/05/19/biasvar/)
 - [Regularized Linear Regression](https://ratsgo.github.io/machine%20learning/2017/05/22/RLR/)
-- [[딥 러닝] 5-1강. 스칼라를 벡터로 미분!](https://www.youtube.com/watch?v=JYOA2zNL9bw)
+- [5-1강. 스칼라를 벡터로 미분!](https://www.youtube.com/watch?v=JYOA2zNL9bw)
 - [L1 & L2](https://www.stand-firm-peter.me/2018/09/24/l1l2/)
