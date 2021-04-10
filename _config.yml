@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "Name"
-  avatar           : "https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/author.png" # path of avatar image
+  avatar           : "https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/author.png?raw=true" # path of avatar image
   bio              : # "I am an **amazing** person."
   location         : "Daejeon, Korea"
   email            : "intaek428@gmail.com"
