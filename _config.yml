@@ -95,14 +95,14 @@ analytics:
 # Site Author
 author:
   name             : "Name"
-  avatar           : "/_images/author.png" # path of avatar image
+  avatar           : "https://github.com/ITHwang/_images/author.png" # path of avatar image
   bio              : # "I am an **amazing** person."
   location         : "Daejeon, Korea"
-  email            :
+  email            : "intaek428@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "intaek428@gmail.com"
+      # url: "intaek428@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
