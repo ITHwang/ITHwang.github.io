@@ -13,7 +13,7 @@ tags:
     - least squares method
     - linear regression
 categories:
-    - MLDL
+    - ML
 ---
 
 ## Introduction

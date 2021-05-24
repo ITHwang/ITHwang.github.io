@@ -13,7 +13,7 @@ tags:
     - define-by-run
     - dynamic programming
 categories:
-    - MLDL
+    - ML
 ---
 
 ## Introduction

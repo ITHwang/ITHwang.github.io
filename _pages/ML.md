@@ -1,7 +1,7 @@
 ---
 title: "ML/DL"
-permalink: /categories/MLDL/
+permalink: /categories/ML/
 layout: category
 author_profile: true
-taxonomy: ML/DL
+taxonomy: ML
 ---
