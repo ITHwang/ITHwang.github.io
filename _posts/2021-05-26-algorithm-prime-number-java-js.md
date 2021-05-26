@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "소수 찾기(prime number) - Java & JavaScript"
+title: "소수 찾기 - Java & JavaScript"
 use_math: true
 toc: true
 toc_sticky: true
@@ -84,7 +84,7 @@ categories:
   console.log("연산 횟수: " + counter);
   ```
 
-1. 어떤 정수 /(n/)에 대하여, /(n/)의 제곱근 이하의 어떤 소수로도 나누어떨어지지 않으면 n은 소수다.
+1. 어떤 정수 \(n\)에 대하여, \(n\)의 제곱근 이하의 어떤 소수로도 나누어떨어지지 않으면 n은 소수다.
 2. 소수 중에 2를 제외하고 모두 홀수다.
 
 ## Reference
