@@ -22,8 +22,7 @@ categories:
 
 여러 방법을 통해 바인딩을 구현할 수 있는데, 그중 하나가 `ServletContext` 클래스와 `ServletConfig` 인터페이스를 이용한 것입니다.
 
-<!-- <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210608-servletcontext-servletconfig.png?raw=true"></p> -->
-<p style="text-align: center;"><img src="../_images/20210608-servletcontext-servletconfig.png?raw=true"></p>
+<p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210608-servletcontext-servletconfig.png?raw=true"></p>
 
 톰캣 컨테이너 실행 시 각 컨텍스트마다 한 개의 ServletContext 객체가 생성되며, 각 서블릿마다 한 개의 ServletConfig가 생성됩니다.(GenericServlet 클래스가 ServletConfig 인터페이스를 구현합니다.)
 이후 ServletConfig는 서블릿이 소멸할 때 같이 소멸되고, ServletContext는 컨테이너가 종료될 때 같이 종료됩니다.
