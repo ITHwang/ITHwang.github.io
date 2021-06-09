@@ -19,7 +19,7 @@ categories:
 HTTP 프로토콜은 서버-클라이언트 통신 시 **stateless 방식**으로 통신합니다.
 즉, 각 웹 페이지가 가지고 있는 상태나 정보를 다른 페이지들과 공유할 수 없습니다.
 
-<p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210609-session-tracking-1?raw=true"></p>
+<p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210609-session-tracking-1.png?raw=true"></p>
 
 일반 유저들은 웹 페이지들이 로그인 창에 입력한 ID 및 PW 정보를 모두 알고 있을 거라 생각하지만, 사실 그렇지 않습니다.
 따라서 서블릿끼리 상태나 정보를 공유하기 위해서 웹 페이지 연결 기능인 **세션 트래킹**(Session Tracking)을 이용해야 합니다.
