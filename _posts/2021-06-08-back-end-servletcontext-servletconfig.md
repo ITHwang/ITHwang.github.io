@@ -20,7 +20,7 @@ categories:
 예를 들어 서블릿에서 다른 서블릿 또는 JSP로 포워딩할 때 데이터도 같이 보낸다면, 주소와 물음표 뒤에 값과 이름이 결합된 형태인 GET 방식을 활용할 수 있습니다.
 그러나 GET은 전송 데이터에 제한이 있으므로 대량의 데이터를 공유하거나 전달하고 싶을 때는 바인딩 기능을 이용합니다.
 
-여러 방법을 통해 바인딩을 구현할 수 있는데, 그중 하나가 `ServletContext` 클래스와 `ServletConfig` 인터페이스를 이용한 것입니다.
+여러 방법을 통해 바인딩을 구현할 수 있는데, 그중 하나가 `ServletContext` 및 `ServletConfig` 인터페이스를 이용한 것입니다.
 
 <p style="text-align: center;"><img src="https://github.com/ITHwang/ITHwang.github.io/blob/master/_images/20210608-servletcontext-servletconfig.png?raw=true"></p>
 
